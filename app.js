@@ -19,5 +19,8 @@ module.exports = function(options) {
   var json = require('./routes/index');
   app.use('/', json);
 
+  app.set('views', path.join(__dirname, 'views'));
+  app.set('view engine', 'ejs');  
+
   return app;
 }
