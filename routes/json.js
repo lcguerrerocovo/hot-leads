@@ -17,7 +17,7 @@ var validateHash = function(hash, timestamp) {
   var currentTime = Date.now();
   var secondsToLive = currentTime - timestamp;
 
-  return true; // hash == timestampHash && secondsToLive < expirationTime
+  return hash == timestampHash && secondsToLive < expirationTime
 }
 
 router.get('/:user/:listing/:hash/:timestamp', function(req, res) {
