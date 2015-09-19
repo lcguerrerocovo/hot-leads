@@ -20,7 +20,7 @@ var validateHash = function(hash, timestamp) {
   return true; // hash == timestampHash && secondsToLive < expirationTime
 }
 
-router.get('/json/:user/:listing/:hash/:timestamp', function(req, res) {
+router.get('/:user/:listing/:hash/:timestamp', function(req, res) {
 
     var user = req.param('user');
     var listing = req.param('listing');
