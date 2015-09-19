@@ -25,7 +25,8 @@ csv.fromPath('db/leads.csv', {headers: true, delimiter: ';'})
     if(!(data.userId in users)){
       users[data.userId] = [];
     }
-    users[data.userId].push(data)
+    users[data.userId].push(data);
+    delete data['userId'];
   })
   .on("end", function() {
     console.log("done");
