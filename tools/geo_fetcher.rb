@@ -6,7 +6,7 @@ require 'net/http'
 
 class GeoFetcher 
   def initialize
-    @solr = RSolr.connect :url => "http://10.0.12.91:8983/solr/inmuebles"
+    @solr = RSolr.connect :url => "http://host:8983/solr/inmuebles"
   end
 
   def fetch(id)
