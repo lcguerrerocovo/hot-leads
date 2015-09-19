@@ -166,37 +166,20 @@ window.initMap = function(){
       
       var rawEmpSale = _.chain(data.events)
             .where(function(item){return item.salePrice != "0"})
-            .groupBy('propertyId');
+            .groupBy('propertyId').value();
             
-      var rawEmpRent = _.chain(data.events)
-            .where(function(item){return item.salePrice != "0"})
-            .groupBy('rentPrice');
-      
-      
+
       
       var qtdSaleEmp = [];
        for (key in rawEmpSale) {
         if (rawEmpSale.hasOwnProperty(key))
             qtdSaleEmp.push(key);
        }
-            
-      var qtdEmpRent = [];
-       for (key in rawEmpSale) {
-        if (qtdEmpRent.hasOwnProperty(key))
-            qtdEmpRent.push(key);
-            
-    }
       
       
-      var total = qtdEmpRent.length+qtdSaleEmp.length;
-      $('#qtdImoveis').text(total);
+      $('#qtdImoveis').text(qtdSaleEmp.length);
       
-      $('#qtdRentImoveis').text(qtdEmpRent.length);
       $('#qtdSaleImoveis').text(qtdSaleEmp.length);
-      
-      $('#progress-qtdItem').css('width', ((qtdSaleEmp.length/total)*100)+ '%');
-      
-      
       
       
       var points = _.map(data.events, function(item){
