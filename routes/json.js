@@ -5,6 +5,7 @@ var router = express.Router();
 var csv = require('fast-csv');
 
 var users = require('../db/users')();
+var enga = require('../db/enga')();
 
 var validateHash = function(hash, timestamp) {
   // change to secure salt later
@@ -20,6 +21,11 @@ var validateHash = function(hash, timestamp) {
   return true; // hash == timestampHash && secondsToLive < expirationTime;
 }
 
+var normalize = function(enga) {
+  var e = (parseInt(enga) / 4.0) + 0.25;
+  return e; 
+}
+
 router.get('/:user/:listing/:hash/:timestamp', function(req, res) {
 
     var user = req.param('user');
@@ -30,7 +36,7 @@ router.get('/:user/:listing/:hash/:timestamp', function(req, res) {
     if(validateHash(hash, timestamp)) {
       
       response = {
-        engagement: Math.random(),
+        engagement: normalize(enga[user].enga),
         listing: listing,
         events: users[user]
       }
