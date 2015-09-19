@@ -10,8 +10,14 @@ module.exports = function(options) {
   app.use(cookieParser());
   app.use('/public', express.static(path.join(__dirname, 'public')));
 
-  var index = require('./routes/index');
-  app.use('/', index);
+  var showcase = require('./routes/showcase');
+  app.use('/showcase', showcase);
+
+  var json = require('./routes/json');
+  app.use('/json', json);
+
+  var json = require('./routes/index');
+  app.use('/', json);
 
   return app;
 }

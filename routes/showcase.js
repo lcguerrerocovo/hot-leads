@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var path = require('path');
+
+var users = require('../db/users')();
 
 router.get('/', function(req, res) {
-  res.sendFile('public/index.html', {root: './'});
+  
 });
 
 module.exports = router;
