@@ -564,6 +564,51 @@
     <!--   </div> -->
     <!-- </section> -->
 
+    <section>
+      <div class="container">
+
+        <h1 class="second-heading">Tipo de Negócio</h1>
+
+        <div class="business-type">
+          <div class="rental-type" style="width: 34%">34%</div>
+          <div class="sales-type" style="width: 66%">66%</div>
+        </div><!-- business-type -->
+
+        <ul class="business-labels">
+          <li class="rental-label">Aluguel</li>
+          <li class="sales-label">Venda</li>
+        </ul>
+
+      </div><!-- container -->
+    </section>
+
+    <section>
+      <div class="container">
+        <h1 class="second-heading">Imóveis Similares</h1>
+
+        <ul class="similar-listing">
+          <li>
+            <a href="#">
+              <img src="http://resizedimgs.vivareal.com/aAWKHA5qDjHJSQC27wirwLWZzcQ=/fit-in/221x147/vr.images.sp/9fe4aca026b212fddad4f9abeb7dbbec.jpg" alt="Similares" />
+              <span class="button-blue">Ver Imóvel</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="http://resizedimgs.vivareal.com/aAWKHA5qDjHJSQC27wirwLWZzcQ=/fit-in/221x147/vr.images.sp/9fe4aca026b212fddad4f9abeb7dbbec.jpg" alt="Similares" />
+              <span class="button-blue">Ver Imóvel</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="http://resizedimgs.vivareal.com/aAWKHA5qDjHJSQC27wirwLWZzcQ=/fit-in/221x147/vr.images.sp/9fe4aca026b212fddad4f9abeb7dbbec.jpg" alt="Similares" />
+              <span class="button-blue">Ver Imóvel</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <!-- Vendor scripts -->
     <script src="vendor/jquery/dist/jquery.min.js"></script>
     <script src="vendor/jquery-ui/jquery-ui.min.js"></script>
@@ -616,8 +661,7 @@
         ]
       };
 
-
-      var ctx = document.getElementById("rental-graph").getContext("2d");
+      var ctx        = document.getElementById("rental-graph").getContext("2d");
       var myNewChart = new Chart(ctx).Line(data);
     </script>
 
@@ -638,8 +682,7 @@
         ]
       };
 
-
-      var ctx2 = document.getElementById("sale-graph").getContext("2d");
+      var ctx2        = document.getElementById("sale-graph").getContext("2d");
       var myNewChart2 = new Chart(ctx2).Line(dataSale);
     </script>
 

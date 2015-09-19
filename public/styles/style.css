@@ -3462,6 +3462,17 @@ ul.h-list li:hover a {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
 .second-heading {
   padding-top: 20px;
   padding-bottom: 30px;
@@ -3532,4 +3543,104 @@ ul.h-list li:hover a {
 #rental-graph,
 #sale-graph {
   margin: 10px;
+}
+
+.business-type {
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 10px;
+  height: 40px;
+}
+
+.business-type > .sales-type,
+.business-type > .rental-type {
+  height: 40px;
+  line-height: 40px;
+  box-sizing: border-box;
+  float: left;
+  position: relative;
+  display: block;
+  text-align: center;
+  color: #fff;
+}
+
+.business-type .rental-type {
+  background: #11394c;
+  border-radius: 7px 0 0 7px;
+}
+
+.business-type .sales-type {
+  background: #0e73a4;
+  border-radius: 0 7px 7px 0;
+}
+
+.business-labels {
+  width: 100%;
+  display: inline-block;
+  list-style: none;
+  padding: 0; margin: 0;
+}
+
+.business-labels li {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  padding: 0; margin: 0 10px 0 0;
+  float: left;
+  position: relative;
+}
+
+.business-labels > .rental-label:before,
+.business-labels > .sales-label:before {
+  content: '■';
+  font-size: 30px;
+  height: 30px;
+  line-height: 23px;
+  float: left;
+  position: relative;
+  margin: 0 5px 0 0;
+}
+
+.business-labels > .rental-label:before {
+  color: #11394c;
+}
+
+.business-labels > .sales-label:before {
+  color: #0e73a4;
+}
+
+.similar-listing {
+  width: 100%;
+  display: inline-block;
+  list-style: none;
+  padding: 0; margin: 0;
+}
+
+.similar-listing li {
+  box-sizing: border-box;
+  width: 30%;
+  margin: 0 1.4%;
+  float: left;
+  position: relative;
+  padding: 10px;
+  border-top: 3px solid #de574c;
+  background: #efefef;
+}
+
+.similar-listing li img {
+  width: 100%;
+}
+
+.button-blue {
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background: #1190cd;
+  font-size: 16px;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  float: left;
+  position: relative;
+  margin-top: 10px;
 }
