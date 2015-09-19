@@ -22,10 +22,15 @@
     <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css" />
     <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/helper.css" />
     <link rel="stylesheet" href="styles/style.css">
+    <style>
+      .progress-bar {
+            padding: 1% 1% 1% 1%;
+      }
+      </style>
 
   </head>
 
-  <body class="landing-page">
+  <body class="landing-page" style="background-image: url(images/hot-lead-bg.jpg);background-repeat:no-repeat;background-position-y: -244px;">
 
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -53,38 +58,15 @@
       </div>
     </nav>
 
-    <!-- <header id="page-top"> -->
-    <!--   <div class="container"> -->
-    <!--     <div class="heading"> -->
-    <!--       <h1> -->
-    <!--         Welcome to Homer landing page -->
-    <!--       </h1> -->
-    <!--       <span>Contrary to popular belief, Lorem Ipsum is not<br/> simply random text for print.</span> -->
-    <!--       <p class="small"> -->
-    <!--         Lorem Ipsum is simply dummy text of the printing and tLorem Ipsum is  Lorem Ipsum is simply dummy of the simply dummy text of the ypesetting. -->
-    <!--       </p> -->
-    <!--       <a href="#" class="btn btn-success btn-sm">Learn more</a> -->
-    <!--     </div> -->
-    <!--     <div class="heading-image animate-panel" data-child="img-animate" data-effect="fadeInRight"> -->
-    <!--       <p class="small">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> -->
-    <!--       <img class="img-animate" src="images/landing/c1.jpg"> -->
-    <!--       <img class="img-animate" src="images/landing/c2.jpg"> -->
-    <!--       <img class="img-animate" src="images/landing/c3.jpg"> -->
-    <!--       <img class="img-animate" src="images/landing/c4.jpg"> -->
-    <!--       <br/> -->
-    <!--       <img class="img-animate" src="images/landing/c5.jpg"> -->
-    <!--       <img class="img-animate" src="images/landing/c6.jpg"> -->
-    <!--       <img class="img-animate" src="images/landing/c7.jpg"> -->
-    <!--       <img class="img-animate" src="images/landing/c8.jpg"> -->
-    <!--     </div> -->
-    <!--   </div> -->
-    <!-- </header> -->
-
-    <section id="thermometer">
+    <section id="heat-map" style="color:white" >
       <div class="container">
-        <div class="row">
-
-          <h1 class="first-heading">Termômetro</h1>
+        <div class="heading">
+            <h1>
+               Cleiton Gomes
+            </h1>
+            <span>klaygomes@gmail.com<br> (61) 9277-7409.</span>
+        </div>
+        <div class="heading-image animate-panel" style="width: 900px;" data-child="img-animate" data-effect="fadeInRight">
 
           <div class="progress-bar">
 
@@ -98,21 +80,126 @@
 
           <ul class="thermometer-labels">
             <li>Buscando</li>
-            <li>Muito Engajado</li>
+            <li>Engajado</li>
             <li>Pronto para Fechar</li>
           </ul>
 
         </div>
-      </div>
-    </section>
-
-    <section id="price-range">
+    </div>
       <div class="container">
-        <h1 class="second-heading">Quantidade de leads, por faixa de preço!</h1>
-        <canvas id="rental-graph" width="520" height="300"></canvas>
-        <canvas id="sale-graph" width="520" height="300"></canvas>
+        <div class="row">
+
+       
+        </div>
       </div>
     </section>
+    <section>
+  <div class="container">
+            <h1 class="second-heading">Imóveis buscado agrupados por preço</h1>
+    <div class="row">
+        <div class="col-sm-6">
+          
+          <div class="hpanel">
+            <div class="panel-heading">
+               Compra
+            </div>
+            <div class="panel-body">
+                <div>
+                    <canvas id="rental-graph" width="450" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+          
+        </div>
+   
+        <div class="col-sm-6">
+          <div class="hpanel">
+            <div class="panel-heading">
+                Aluguel
+            </div>
+            <div class="panel-body">
+                <div>
+                       <canvas id="sale-graph" width="450" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+          
+         
+      </div>
+  </div>
+  </div>
+</section>
+    
+<section>
+  <div class="container">
+            <h1 class="second-heading">Locais de interesse</h1>
+    <div class="row">
+      
+      <div class="col-sm-2">
+
+          <div class="hpanel">
+            <div class="panel-heading">
+               Atividade
+            </div>
+            <div class="panel-body">
+                        <div class="stats-title pull-left">
+                            <h4>Predição</h4>
+                        </div>
+                        <div class="stats-icon pull-right">
+                            <i class="pe-7s-share fa-4x"></i>
+                        </div>
+                        <div class="m-t-xl">
+                            <h3 class="m-b-xs">210</h3>
+                    <span class="font-bold no-margins">
+                        Empreendimentos vistos
+                    </span>
+
+                            <div class="progress m-t-xs full progress-small">
+                                <div style="width: 55%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="55" role="progressbar" class=" progress-bar progress-bar-success">
+                                    <span class="sr-only">35% Complete (success)</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-6 animated-panel zoomIn" style="animation-delay: 0.5s;">
+                                    <small class="stats-label">Aluguel</small>
+                                    <h4>7.80</h4>
+                                </div>
+
+                                <div class="col-xs-6 animated-panel zoomIn" style="animation-delay: 0.6s;">
+                                    <small class="stats-label">Compra</small>
+                                    <h4>76.43%</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+          
+        </div>
+
+
+        
+        <div class="col-sm-8">
+          
+          <div class="hpanel">
+            <div class="panel-heading">
+               Compra
+            </div>
+            <div class="panel-body">
+                <div>
+                    <div id="map1" style="width:700px;height:500px;" class="map-canvas flex">
+                </div>
+            </div>
+        </div>
+          
+        </div>
+      </div>
+
+  </div>
+  </div>
+</section>
+
+
 
     <!-- <section id="components" class="bg-light"> -->
     <!--   <div class="container"> -->
@@ -564,23 +651,23 @@
     <!--   </div> -->
     <!-- </section> -->
 
-    <section id="business-type">
-      <div class="container">
-
-        <h1 class="second-heading">Tipo de Negócio</h1>
-
-        <div class="business-type">
-          <div class="rental-type" style="width: 34%">34%</div>
-          <div class="sales-type" style="width: 66%">66%</div>
-        </div><!-- business-type -->
-
-        <ul class="business-labels">
-          <li class="rental-label">Aluguel</li>
-          <li class="sales-label">Venda</li>
-        </ul>
-
-      </div><!-- container -->
-    </section>
+    <!-- <section id="business-type"> -->
+    <!--   <div class="container"> -->
+<!--  -->
+    <!--     <h1 class="second-heading">Tipo de Negócio</h1> -->
+<!--  -->
+    <!--     <div class="business-type"> -->
+    <!--       <div class="rental-type" style="width: 34%">34%</div> -->
+    <!--       <div class="sales-type" style="width: 66%">66%</div> -->
+    <!--     </div><1!-- business-type --1> -->
+<!--  -->
+    <!--     <ul class="business-labels"> -->
+    <!--       <li class="rental-label">Aluguel</li> -->
+    <!--       <li class="sales-label">Venda</li> -->
+    <!--     </ul> -->
+<!--  -->
+    <!--   </div><1!-- container --1> -->
+    <!-- </section> -->
 
     <section id="similar-listings">
       <div class="container">
@@ -621,6 +708,13 @@
 
     <!-- App scripts -->
     <script src="scripts/homer.js"></script>
+    
+    
+    <script src="scripts/moment.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXTkS9AkDby-nw6J9St6vA_5nLwHfuIbY&libraries=visualization,places&callback=initMap"></script>
+    <script src="scripts/code.js"></script>
+    
+    
 
     <!-- Local script for menu handle -->
     <!-- It can be also directive -->
