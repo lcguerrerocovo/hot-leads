@@ -46,16 +46,20 @@ var validateHash = function(hash, timestamp) {
   return true; // hash == timestampHash && secondsToLive < expirationTime
 }
 
-router.get('/:user/:account/:listing/:hash/:timestamp', function(req, res) {
+router.get('/:user/:listing/:hash/:timestamp', function(req, res) {
 
     var user = req.param('user');
-    var account = req.param('account');
     var listing = req.param('listing');
     var hash = req.param('hash');
     var timestamp = req.param('timestamp');
 
     if(validateHash(hash, timestamp)) {
-      response = users[user];
+      
+      response = {
+        engagement: Math.random(),
+        listing: listing,
+        events: users[user]
+      }
 
       res.setHeader('Content-Type', 'application/json');
       res.send(JSON.stringify(response));
