@@ -1,0 +1,29 @@
+{
+  "engagement": 0.75,
+  "business": {
+    "rental": {
+      "prices": [5000, 5500, 6000],
+      "geo": [
+        {"lat": 10, "long": 55},
+        {"lat": 10, "long": 55},
+        {"lat": 10, "long": 55},
+        {"lat": 10, "long": 55}
+      ]
+    },
+    "sale": {
+      "prices": [550000, 730000, 940000],
+      "geo": [
+        {"lat": 10, "long": 55},
+        {"lat": 10, "long": 55},
+        {"lat": 10, "long": 55},
+        {"lat": 10, "long": 55}
+      ]
+    }
+  },
+  "similar": [
+    {
+      "url-detail": "http://www.www.com/",
+      "url-thumb": "http://www.www.com/"
+    }
+  ]
+}
