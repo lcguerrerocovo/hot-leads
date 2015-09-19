@@ -3534,6 +3534,7 @@ ul.h-list li:hover a {
 
   border-left: 1px solid #fff;
   border-top: 1px solid #fff;
+  color: #fff;
 }
 
 .thermometer-labels li:first-child {
