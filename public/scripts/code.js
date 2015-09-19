@@ -69,8 +69,10 @@ var hotLead = {
 
       html = [
           '<li>',
-            '<a href="' + listing.siteUrl + '" target="_blank">',
+            '<a href="' + listing.siteUrl + '" target="_blank" class="casta">',
               '<img src="' + listing.thumbnail + '" alt="Similares" />',
+            '</a>',
+            '<a href="' + listing.siteUrl + '" target="_blank">',
               '<span class="button-blue">Ver Imóvel</span>',
             '</a>',
           '</li>',
@@ -155,10 +157,11 @@ window.initMap = function(){
             
             
 
-      var ctx        = document.getElementById("rental-graph").getContext("2d");
-      var myNewChart = new Chart(ctx).Line(dataRent);
         var ctx2        = document.getElementById("sale-graph").getContext("2d");
-      var myNewChart2 = new Chart(ctx2).Line(dataSale);
+      var myNewChart2 = new Chart(ctx2).Line(dataSale, {
+        scaleBeginAtZero : true,
+        bezierCurve: false
+      });
       
       var qtdRaw = _.groupBy(data.events, 'propertyId');
       
