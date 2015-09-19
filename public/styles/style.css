@@ -3532,8 +3532,8 @@ ul.h-list li:hover a {
   font-size: 22px;
   float: left;
 
-  border-left: 1px solid #000;
-  border-top: 1px solid #000;
+  border-left: 1px solid #fff;
+  border-top: 1px solid #fff;
 }
 
 .thermometer-labels li:first-child {

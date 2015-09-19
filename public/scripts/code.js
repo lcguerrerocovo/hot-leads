@@ -52,13 +52,50 @@ var hotLead = {
     return 'R$ ' + formatted;
   };
 
+
+
+
+(function() {
+
+  var pathName = window.location.pathname,
+      pathNameArray = pathName.split('/'),
+      listingID = pathNameArray[2],
+      URL = 'http://api-hackaton.elasticbeanstalk.com/api/1.0/listings/property/' + listingID + '/similar?expectedResults=3&onlySameAccount=true&&language=pt';
+
+  $.get(URL, function(data) {
+
+    for (var i = 0; i < data.listings.length; i += 1) {
+      listing = data.listings[i];
+
+      html = [
+          '<li>',
+            '<a href="' + listing.siteUrl + '" target="_blank">',
+              '<img src="' + listing.thumbnail + '" alt="Similares" />',
+              '<span class="button-blue">Ver Imóvel</span>',
+            '</a>',
+          '</li>',
+      ];
+
+      $('#similar-listing-account').append(html.join(''));
+    }
+
+
+  });
+
+})();
+
 window.initMap = function(){  
+  var pathName = window.location.pathname,
+      pathNameArray = pathName.split('/'),
+      userID = pathNameArray[1],
+      listingID = pathNameArray[2],
+      hash = pathNameArray[3],
+      timeStamp = pathNameArray[4];
+
     //$.get(window.location.href.split('/').slice(4).join('/'), function(data){
-        $.get('/json/ff7f8432f712a6adffce53016b70c91c/54530492/c/b', function(data){
+        $.get(('/json' + pathName), function(data){
             $('.the-bar').css('width', (data.engagement*100)+'%');
             
-            
-            console.log(data)
             
               var dataRent = {
         labels: [],
@@ -118,7 +155,6 @@ window.initMap = function(){
             
             
 
-            
       var ctx        = document.getElementById("rental-graph").getContext("2d");
       var myNewChart = new Chart(ctx).Line(dataRent);
         var ctx2        = document.getElementById("sale-graph").getContext("2d");
