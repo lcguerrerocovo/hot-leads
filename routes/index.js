@@ -2,10 +2,21 @@ var express = require('express');
 var md5 = require('md5');
 var router = express.Router();
 
-
-
 var csv = require('fast-csv');
-csv.fromPath('db/leads.csv')
+csv.fromPath('db/leads.csv', {headers: true, delimiter: ';'})
+  .transform(function(obj){
+    return {
+      userId: obj.userId,
+      timestamp: obj.timestamp,
+      accountId: obj.accountId,
+      propertyId: obj.propertyId,
+      business: obj.business,
+      salePrice: obj.salePrice,
+      rentPrice: obj.rentPrice,
+      lat: obj.lat,
+      lon: obj.lon
+    };
+  })
   .on("data", function(data) {
     console.log(data);
   })
