@@ -3,6 +3,9 @@ var md5 = require('md5');
 var router = express.Router();
 
 var csv = require('fast-csv');
+
+var users = {};
+
 csv.fromPath('db/leads.csv', {headers: true, delimiter: ';'})
   .transform(function(obj){
     return {
@@ -19,6 +22,10 @@ csv.fromPath('db/leads.csv', {headers: true, delimiter: ';'})
   })
   .on("data", function(data) {
     console.log(data);
+    if(!(data.userId in users)){
+      users[data.userId] = [];
+    }
+    users[data.userId].push(data)
   })
   .on("end", function() {
     console.log("done");
@@ -47,9 +54,7 @@ router.get('/:user/:account/:listing/:hash/:timestamp', function(req, res) {
     var timestamp = req.param('timestamp');
 
     if(validateHash(hash, timestamp)) {
-      var response = {
-          data: "wow"
-      };
+      response = users[user];
 
       res.setHeader('Content-Type', 'application/json');
       res.send(JSON.stringify(response));
