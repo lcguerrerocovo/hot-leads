@@ -5,8 +5,13 @@ var router = express.Router();
 
 
 var csv = require('fast-csv');
-var fileStream = fs.createReadStream("db/leads.csv"),
-        parser = fastCsv();
+csv.fromPath('db/leads.csv')
+  .on("data", function(data) {
+    console.log(data);
+  })
+  .on("end", function() {
+    console.log("done");
+  })
 
 var validateHash = function(hash, timestamp) {
   // change to secure salt later
@@ -32,16 +37,7 @@ router.get('/:user/:account/:listing/:hash/:timestamp', function(req, res) {
 
     if(validateHash(hash, timestamp)) {
       var response = {
-          account: account,
-          timestamp: timestamp,
-          hash: timestampHash,
-          currentTime: currentTime,
-          secondsToLive: secondsToLive,
-
-          rental: {
-              prices: [100, 200, 300, 400],
-              geo: [{}],
-          }
+          data: "wow"
       };
 
       res.setHeader('Content-Type', 'application/json');
