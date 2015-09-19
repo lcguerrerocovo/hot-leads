@@ -100,7 +100,7 @@
           
           <div class="hpanel">
             <div class="panel-heading">
-               Compra
+               Aluguel
             </div>
             <div class="panel-body">
                 <div>
@@ -114,7 +114,7 @@
         <div class="col-sm-6">
           <div class="hpanel">
             <div class="panel-heading">
-                Aluguel
+                Compra
             </div>
             <div class="panel-body">
                 <div>
@@ -148,13 +148,13 @@
                             <i class="pe-7s-share fa-4x"></i>
                         </div>
                         <div class="m-t-xl">
-                            <h3 class="m-b-xs">210</h3>
+                            <h3 class="m-b-xs" id="qtdImoveis">210</h3>
                     <span class="font-bold no-margins">
                         Empreendimentos vistos
                     </span>
 
                             <div class="progress m-t-xs full progress-small">
-                                <div style="width: 55%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="55" role="progressbar" class=" progress-bar progress-bar-success">
+                                <div style="width: 55%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="55" role="progressbar" id="progress-qtdItem" class=" progress-bar progress-bar-success">
                                     <span class="sr-only">35% Complete (success)</span>
                                 </div>
                             </div>
@@ -162,12 +162,12 @@
                             <div class="row">
                                 <div class="col-xs-6 animated-panel zoomIn" style="animation-delay: 0.5s;">
                                     <small class="stats-label">Aluguel</small>
-                                    <h4>7.80</h4>
+                                    <h4 id="qtdRentImoveis">7.80</h4>
                                 </div>
 
                                 <div class="col-xs-6 animated-panel zoomIn" style="animation-delay: 0.6s;">
                                     <small class="stats-label">Compra</small>
-                                    <h4>76.43%</h4>
+                                    <h4 id="qtdSaleImoveis">76.43%</h4>
                                 </div>
                             </div>
                         </div>
@@ -650,23 +650,40 @@
     <!--   </div> -->
     <!-- </section> -->
 
-    <!-- <section id="business-type"> -->
-    <!--   <div class="container"> -->
-<!--  -->
-    <!--     <h1 class="second-heading">Tipo de Negócio</h1> -->
-<!--  -->
-    <!--     <div class="business-type"> -->
-    <!--       <div class="rental-type" style="width: 34%">34%</div> -->
-    <!--       <div class="sales-type" style="width: 66%">66%</div> -->
-    <!--     </div><1!-- business-type --1> -->
-<!--  -->
-    <!--     <ul class="business-labels"> -->
-    <!--       <li class="rental-label">Aluguel</li> -->
-    <!--       <li class="sales-label">Venda</li> -->
-    <!--     </ul> -->
-<!--  -->
-    <!--   </div><1!-- container --1> -->
-    <!-- </section> -->
+    <!-- <section id="business-type">
+ -->
+    <!--   <div class="container">
+ -->
+<!-- 
+ -->
+    <!--     <h1 class="second-heading">Tipo de Negócio</h1>
+ -->
+<!-- 
+ -->
+    <!--     <div class="business-type">
+ -->
+    <!--       <div class="rental-type" style="width: 34%">34%</div>
+ -->
+    <!--       <div class="sales-type" style="width: 66%">66%</div>
+ -->
+    <!--     </div><1!-- business-type --1>
+ -->
+<!-- 
+ -->
+    <!--     <ul class="business-labels">
+ -->
+    <!--       <li class="rental-label">Aluguel</li>
+ -->
+    <!--       <li class="sales-label">Venda</li>
+ -->
+    <!--     </ul>
+ -->
+<!-- 
+ -->
+    <!--   </div><1!-- container --1>
+ -->
+    <!-- </section>
+ -->
 
     <section id="similar-listings">
       <div class="container">
@@ -708,10 +725,12 @@
     <!-- App scripts -->
     <script src="/public/scripts/homer.js"></script>
     
-    
+    <script src="/public/scripts/under.js"></script>
     <script src="/public/scripts/moment.min.js"></script>
+
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXTkS9AkDby-nw6J9St6vA_5nLwHfuIbY&libraries=visualization,places&callback=initMap"></script>
     <script src="/public/scripts/code.js"></script>
+    
     
     
 
@@ -735,48 +754,6 @@
         });
 
       });
-    </script>
-
-    <script type="text/javascript" charset="utf-8">
-      var data = {
-        labels: ["R$ 5000,00", "R$ 5200,00", "R$ 5500,00", "R$ 6000,00", "R$ 7999,99"],
-        datasets: [
-          {
-            label: "My Second dataset",
-            fillColor: "rgba(17,144,205,0.2)",
-            strokeColor: "rgba(17,144,205,1)",
-            pointColor: "rgba(255,255,255,1)",
-            pointStrokeColor: "#1190cd",
-            pointHighlightFill: "rgba(17,144,205,0.8)",
-            pointHighlightStroke: "rgba(255,255,255,1)",
-            data: [4, 5, 4, 3, 9]
-          }
-        ]
-      };
-
-      var ctx        = document.getElementById("rental-graph").getContext("2d");
-      var myNewChart = new Chart(ctx).Line(data);
-    </script>
-
-    <script type="text/javascript" charset="utf-8">
-      var dataSale = {
-        labels: ["R$ 493.000,00", "R$ 212.200,00", "R$ 223.000,00", "R$ 692.000,00", "R$ 799.099,99"],
-        datasets: [
-          {
-            label: "My Second dataset",
-            fillColor: "rgba(17,144,205,0.2)",
-            strokeColor: "rgba(17,144,205,1)",
-            pointColor: "rgba(255,255,255,1)",
-            pointStrokeColor: "#1190cd",
-            pointHighlightFill: "rgba(17,144,205,0.8)",
-            pointHighlightStroke: "rgba(255,255,255,1)",
-            data: [1, 2, 1, 7, 4]
-          }
-        ]
-      };
-
-      var ctx2        = document.getElementById("sale-graph").getContext("2d");
-      var myNewChart2 = new Chart(ctx2).Line(dataSale);
     </script>
 
   </body>
