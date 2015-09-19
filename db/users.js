@@ -3,7 +3,7 @@ var csv = require('fast-csv');
 module.exports = function() {
   var users = {};
 
-  csv.fromPath('db/leads.csv', {headers: true, delimiter: ';'})
+  csv.fromPath('db/leads-a-lot.csv', {headers: true, delimiter: ';'})
     .transform(function(obj){
       return {
         userId: obj.userId,
