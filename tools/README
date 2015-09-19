@@ -1,0 +1,3 @@
+# USAGE
+
+cat *.json | grep "Property Contacted" | ruby parse.rb | sort > file.csv
